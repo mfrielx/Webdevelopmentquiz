@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+div#test{ border:#000 5px solid; padding:10px 40px 40px 40px;}
+
+</style>
+<link href="css/styles.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+body,td,th {
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+}
+body {
+	background-image: url(images/backgroundimage.jpg);
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+.quizborder {
+	width: 50%;
+	float: left;
+}
+</style>
+
+<script>
+																		//Adding the questions here//
+	
+var pos = 0, test, test_status, question, choice, choices, chA, chB, chC, correct = 0;
+var questions = [
+		["Who won the 2010 BRIT Award for British Male Solo Artist?","Chris Brown","Eminem","Dizzie Rascal","C"],
+		
+		["Which band released a 2003 album entitled 'Youth and Young Manhood'?","Kings of Leon","Greenday","Maroon 5","A"],
+		
+		["Which US singer released a 2000 album entitled 'Music'?","Britney Spears","Madonna","Mariah Carey","B"],
+		
+		["Which member of Take That replaced Simon Cowell as a judge on the British X Factor?","Robbie Williams","Gary Barlow","Mark Owen","B"],
+		
+		["Which country singer was known as 'The Main in Black'?","John Lennon","Will.i.am","U2","B"],
+		
+		["Batterhead, Flam and Rimshot are all items associated with which musical instrument?","Drum","Triangle","Guitar","A"],
+		
+		["Harry, Liam, Niall, Louis and Zayn are all members of which British Boy Band?","Greenday","Busted","One Direction","C"],
+		
+		["Back to Bedlam was the debut album for which British Singer?","James Blunt","Elton John","Justin Timberlake","A"],
+		
+		["Which English singer-songwriter's pet spaniel was a special guest at his civil partnership ceremony?","James Blunt","Elton John","Liam Payne","B"],
+		
+		["Which English singer has a pet Chihuahua called Buster?","Cheryl Cole","Nadine Coyle","Adele","A"],
+		
+		["What is the name of the last Beatles album to be recorded before the band split up?","Dublin Road","Abbey Road","Cross Road","B"],
+		
+		["Which singer released the single 'Lonely' in 2005?","Akon","Justin Bieber","The Weekend", "A"],
+		
+		["Which of these instruments uses the treble clef only?","Viola","Piccolo","Tenor Sax","B"],
+		
+		["How many members of Boyzone were there?","3","5","7","B"],
+		
+		["How many members of the Corrs are not female?","2","3","1","C"],
+		
+		["Which instrument is James Galway famous for playing?","The Flute","The Fiddle","The Piano","A"],
+		
+		["The Pogues were formed in what year?","1978","1998","1982","C"],
+		
+		["Which famous city in Ireland was James Galway born?","Galway","Belfast","Dublin","B"],
+		
+		["In U2 which instrument does the Edge play?","Guitar","Bass","Keyboard","A"],
+		
+		["Whose childhood hit was Fingertips?","Stevie Wonder","Elton John","Justin Bieber","A"],
+		
+		["Who released the number 1, 'Sorry'?","Justin Bieber","Liam Payne","One Direction","A"],
+		
+		["Tom Parker managed which huge star?","Elvis Presley","Madonna","Michael Jackson","A"],
+		
+		["Which motor city was the original the base of Tamla Modtown?","Chicago","New Jersey","Detroit","C"]
+
+];
+function _(x){
+	return document.getElementById(x);
+}
+function renderQuestion(){
+	test = _("test");
+	if(pos >= questions.length){
+		test.innerHTML = "<h2>You got "+correct+" of "+questions.length+" questions correct</h2>";
+		_("test_status").innerHTML = "Test Completed";
+		pos = 0;
+		correct = 0;
+		return false;
+	}
+	_("test_status").innerHTML = "Question "+(pos+1)+" of "+questions.length;
+	question = questions[pos][0];
+	chA = questions[pos][1];
+	chB = questions[pos][2];
+	chC = questions[pos][3];
+	test.innerHTML = "<h3>"+question+"</h3>";
+	test.innerHTML += "<input type='radio' name='choices' value='A'> "+chA+"<br>";
+	test.innerHTML += "<input type='radio' name='choices' value='B'> "+chB+"<br>";
+	test.innerHTML += "<input type='radio' name='choices' value='C'> "+chC+"<br><br>";
+	test.innerHTML += "<button onclick='checkAnswer()'>Submit Answer</button>";
+}
+function checkAnswer(){
+	choices = document.getElementsByName("choices");
+	for(var i=0; i<choices.length; i++){
+		if(choices[i].checked){
+			choice = choices[i].value;
+		}
+	}
+	if(choice == questions[pos][4]){
+		correct++;
+		
+	}
+	pos++;
+	renderQuestion();
+	
+}
+	
+window.addEventListener("load", renderQuestion, false);
+	
+	
+
+	var myVar=setInterval(function(){myTimer()},1000);
+	
+	
+																			//Adding a timer to my Quiz
+function myTimer() {
+    var d = new Date();
+    document.getElementById("timer").innerHTML = d.toLocaleTimeString();
+}
+																			//Adding classes below
+</script>
+</head>
+<body>
+<h1 class="title">Music Quiz</h1>
+<h2 class="centre goodluck" id="test_status"></h2>
+<p class="goodluck">Good Luck!</p>
+<p class="timeforquiz" id="timer"></p>
+<img src="images/PlzFillFormBelow.png" alt="" width="250" height="100" class="imageforform"/>
+<div class="quizborder centrequiz border" id="test"></div>
+
+<form action="/action_page.php" class="formdetails formfont forminput width">
+ 		
+  First name:<br>
+  <input name="firstname" type="text" class="forminput border" value="">
+  <br>
+  Last name:<br>
+  <input name="lastname" type="text" class="forminput border" value="">
+  <br>
+  Mobile Number:<br>
+  <input name="mobilenumber" type="number" class="forminput border" value="">
+  <p>
+  </p> Email:<br>
+  <input name="email" type="email" class="forminput border" value="">
+  <p></p>Address:<br>
+<br>
+  <textarea name="comment" cols="50" rows="4" class="address" form="usrform">
+Enter address here...</textarea>
+ 
+  <input type="submit" value="Submit">
+</form>
+	<a href="https://youtu.be/JGwWNGJdvx8?list=RDQMvDLwoU4iuiY" class="centre">Click here to Listen</a>
+
+}
+</body>
+</html>

@@ -1,0 +1,103 @@
+@charset "utf-8";
+
+.centre {
+}
+.centre {
+	text-align: center;
+	color: #FCFCFC;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+	font-style: normal;
+	font-variant: small-caps;
+	font-weight: bolder;
+	font-size: xx-large;
+	text-decoration: underline;
+}
+.quizborder {
+}
+.formdetails {
+
+
+
+
+}
+.forminput {
+	float: none;
+	padding-left: 20px;
+}
+.formfont {
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+	color: #FCFCFC;
+	font-variant: normal;
+	font-size: large;
+	text-align: left;
+}
+.address {
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+	font-size: medium;
+	text-align: left;
+	border: medium solid #000000;
+	width: 3in;
+}
+.formdetails.formfont .address {
+}
+.border {
+	border: medium solid #000000;
+	color: #000000;
+}
+.centrequiz {
+	padding-left: 40%;
+}
+.width {
+	padding-left: 65%;
+
+
+}
+.goodluck {
+	text-align: center;
+	color: #FCFCFC;
+	letter-spacing: 0;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+	font-variant: small-caps;
+	font-weight: bold;
+	font-size: xx-large;
+	text-shadow: 2px 2px red;
+}
+
+.form {
+}
+.imageforform {
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+	margin-left: 90px;
+}
+
+img:hover {
+    opacity: 1.0;
+    filter: alpha(opacity=100); 
+}
+
+
+	.formpic {
+}
+.timeforquiz {
+	text-align: center;
+	text-shadow: 0px 0px;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+	font-weight: bold;
+	font-size: x-large;
+}
+.title {
+	text-transform: capitalize;
+	text-align: center;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+	font-size: xx-large;
+	width: 100%;
+    height: 50%;
+    background:#E1A2F9;
+    transition: width 2s;
+}
+
+.title:hover {
+    width: 300px;
+	
+}
